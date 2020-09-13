@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  lavalink:
+    build: .
+    ports:
+      - "2333:2333"
+    networks:
+      - lavalink
+
+networks:
+  lavalink:
+    name: lavalink
+    driver: bridge
