@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lavalink-deployment
+  labels:
+    app: lavalink
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lavalink
+  template:
+    metadata:
+      labels:
+        app: lavalink
+    spec:
+      containers:
+      - name: lavalink
+        image: andresgarcia29/lavalink
+        ports:
+        - containerPort: 2333
